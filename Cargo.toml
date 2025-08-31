@@ -1,0 +1,22 @@
+[package]
+name = "rust_timer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.5.4", features = ["derive"] }
+indicatif = "0.17.8"
+notify-rust = "4.10.0"
+humantime = "2.1.0"
+rodio = { version = "0.18.1", features = ["mp3"] }
+rand = "0.8.5"
+
+[dev-dependencies]
+assert_cmd = "2.0.14"
+predicates = "3.1.0"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+opt-level = 3
