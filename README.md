@@ -1,46 +1,56 @@
-# rust_timer ⏰
+#  rust_timer ⏰
 
-A simple, minimalist terminal countdown timer for Linux with desktop notifications and sound, built with Rust.
+A simple, minimalist, and elegant terminal countdown timer for Linux, built with Rust.
 
-![rust_timer_demo](https://i.imgur.com/YOUR_IMAGE_URL.gif) 
+It provides a clean visual progress bar, desktop notifications, and sound alerts, making it a perfect tool for productivity sessions, reminders, or any countdown need directly from your terminal.
+
+![rust_timer_demo](https://i.imgur.com/YOUR_IMAGE_URL.gif)
 *(Optional: You can run the timer and record a GIF of it in action to show it off!)*
 
 ---
 
 ## ✨ Features
 
-- **Simple Interface:** Set timers from your terminal using hours, minutes, and seconds.
-- **Visual Feedback:** A clean, animated progress bar shows the time remaining.
-- **Desktop Notifications:** Get a system notification when the timer is complete.
-- **Sound Alerts:** Plays a sound to get your attention.
-- **Highly Performant:** Built with Rust for minimal resource consumption.
-- **System-Wide:** Install it once and run it from any directory.
+- **Elegant Interface:** Set timers easily using hours, minutes, and seconds.
+- **Clean Visual Feedback:** A smooth, animated progress bar shows the time remaining.
+- **Desktop Notifications:** Get a native system notification when the timer is complete.
+- **Customizable Sound Alerts:** Plays a sound to get your attention when time is up.
+- **Motivational Messages:** Get a random motivational message upon completion.
+- **Cross-Platform:** Works on any modern Linux desktop environment (GNOME, KDE, XFCE, etc.).
+- **Lightweight & Performant:** Built with Rust for minimal resource consumption.
 
 ## 📦 Installation
 
-1.  **Prerequisites:** Ensure you have the Rust toolchain (`cargo`) and `ffmpeg` installed.
-2.  **Clone the repository:**
+#### Prerequisites
+- **Rust Toolchain:** `rustc` and `cargo`
+- **For sound:** `ffmpeg` and `libasound2-dev` (or your system's equivalent ALSA development library).
+
+#### Build from Source
+1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/rust_timer.git
+    git clone https://github.com/mohammedrobo/rust_timer.git
     cd rust_timer
     ```
-3.  **Build the release binary:**
+
+2.  **Build the release binary:**
     ```bash
     cargo build --release
     ```
-4.  **Install the executable:**
+
+3.  **Install the executable:**
     ```bash
     cp target/release/rust_timer ~/.local/bin/
     ```
     *(Ensure `~/.local/bin` is in your system's PATH)*
 
-5.  **Install Assets:** Place a sound file (`complete.wav`, `.mp3`, or `.ogg`) in `~/.local/bin/`. The notification icon is a standard system icon.
+4.  **(Optional) Install Sound Asset:**
+    Place a sound file named `complete.wav`, `complete.mp3`, or `complete.ogg` in the same directory as the executable (`~/.local/bin/`).
 
 ## 🚀 Usage
 
 Run the timer from any terminal.
 
-**Examples:**
+#### Examples
 
 - **Set a timer for 10 seconds:**
   ```bash
@@ -50,22 +60,32 @@ Run the timer from any terminal.
   ```bash
   rust_timer -m 5 -s 30
   ```
-- **Set a timer for 1 hour:**
+- **Set a timer for 1 hour with a custom message:**
   ```bash
-  rust_timer -H 1
+  rust_timer -H 1 -M "Time to take a break!"
   ```
 
-### Options
+### Command-Line Options
 
-| Flag | Long Flag | Description                  | Default     |
-| :--- | :-------- | :--------------------------- | :---------- |
-| `-H` | `--hours`   | Set the duration in hours    | `0`         |
-| `-m` | `--minutes` | Set the duration in minutes  | `0`         |
-| `-s` | `--seconds` | Set the duration in seconds  | `0`         |
+| Flag | Long Flag   | Description                       | Default                   |
+| :--- | :---------- | :-------------------------------- | :------------------------ |
+| `-H` | `--hours`   | Set the duration in hours         | `0`                       |
+| `-m` | `--minutes` | Set the duration in minutes       | `0`                       |
+| `-s` | `--seconds` | Set the duration in seconds       | `0`                       |
 | `-M` | `--message` | Set a custom notification message | "Your timer is complete!" |
 
 ---
 
 ## 🔧 Contributing
 
-Feel free to open an issue to report a bug or suggest a feature, or submit a pull request with improvements.
+Contributions are welcome! Feel free to open an issue to report a bug or suggest a feature, or submit a pull request with your improvements.
+
+1.  Fork the repository.
+2.  Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4.  Push to the branch (`git push origin feature/AmazingFeature`).
+5.  Open a Pull Request.
+
+## 📜 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
